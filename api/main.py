@@ -1,7 +1,6 @@
 import os
 import sys
 
-# Vercel doesn't add api/ to the import path, so add it manually
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from fastapi import FastAPI, Depends, HTTPException, status
@@ -19,16 +18,20 @@ import models
 import schemas
 from database import get_db
 
-
 app = FastAPI(title="BaryoBenta API", version="0.1.0")
 
-   @app.get("/", include_in_schema=False)
-   def root():
-       return {
-           "message": "BaryoBenta API is running",
-           "docs": "/docs",
-           "health": "/health",
-       }
+
+# ------------------------------------------------------------------
+# ROOT
+# ------------------------------------------------------------------
+@app.get("/", include_in_schema=False)
+def root():
+    return {
+        "message": "BaryoBenta API is running",
+        "docs": "/docs",
+        "health": "/health",
+    }
+
 
 # ------------------------------------------------------------------
 # Centralized, structured error handling

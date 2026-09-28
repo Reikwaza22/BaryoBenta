@@ -22,6 +22,13 @@ from database import get_db
 
 app = FastAPI(title="BaryoBenta API", version="0.1.0")
 
+   @app.get("/", include_in_schema=False)
+   def root():
+       return {
+           "message": "BaryoBenta API is running",
+           "docs": "/docs",
+           "health": "/health",
+       }
 
 # ------------------------------------------------------------------
 # Centralized, structured error handling

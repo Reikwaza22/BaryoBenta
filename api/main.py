@@ -64,7 +64,7 @@ async def db_error_handler(request, exc):
     print("DB ERROR:", repr(exc), flush=True)
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-        content=error_body(500, "Database Error", "An unexpected database error occurred."),
+        content=error_body(500, "Database Error", str(exc)[:400]),
     )
 
 

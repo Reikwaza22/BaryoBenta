@@ -1,3 +1,9 @@
+import os
+import sys
+
+# Vercel doesn't add api/ to the import path, so add it manually
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse, Response
@@ -11,11 +17,8 @@ from io import StringIO
 
 import models
 import schemas
-from database import engine, get_db, Base
+from database import get_db
 
-# Creates tables if they don't exist yet (safe alongside schema.sql, which
-# already creates them with ENUM types / indexes for the live Supabase DB).
-Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="BaryoBenta API", version="0.1.0")
 

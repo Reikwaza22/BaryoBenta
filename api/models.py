@@ -1,7 +1,7 @@
 import enum
 from sqlalchemy import (
     Column, Integer, String, Text, Numeric, TIMESTAMP, ForeignKey,
-    SmallInteger, PrimaryKeyConstraint, Boolean, func
+    SmallInteger, PrimaryKeyConstraint, Boolean, UniqueConstraint, func
 )
 from sqlalchemy.orm import relationship
 from database import Base
@@ -27,7 +27,7 @@ class User(Base):
     email           = Column(String(150), nullable=False, unique=True, index=True)
     password_hash   = Column(String(255), nullable=False)
     contact_number  = Column(String(20))
-    role            = Column(String(20), nullable=False, default="buyer")
+    role            = Column(String(20), nullable=False, default="Buyer")
     verified_status = Column(Boolean, nullable=False, default=False)
     created_at      = Column(TIMESTAMP, server_default=func.now())
 
@@ -96,6 +96,8 @@ class Rating(Base):
     score          = Column(SmallInteger, nullable=False)
     comment        = Column(Text)
     created_at     = Column(TIMESTAMP, server_default=func.now())
+    # A member may rate a given transaction only once.
+    __table_args__ = (UniqueConstraint("transaction_id", "rater_id", name="rating_transaction_rater_key"),)
 
 
 class Boost(Base):
@@ -110,9 +112,11 @@ class Boost(Base):
 
 class Report(Base):
     __tablename__ = "report"
-    report_id   = Column(Integer, primary_key=True, index=True)
-    reporter_id = Column(Integer, ForeignKey("app_user.user_id", ondelete="CASCADE"), nullable=False)
-    listing_id  = Column(Integer, ForeignKey("listing.listing_id", ondelete="CASCADE"))
-    reason      = Column(String(255), nullable=False)
-    status      = Column(String(20), nullable=False, default="Open")
-    created_at  = Column(TIMESTAMP, server_default=func.now())
+    report_id        = Column(Integer, primary_key=True, index=True)
+    reporter_id      = Column(Integer, ForeignKey("app_user.user_id", ondelete="CASCADE"), nullable=False)
+    # A report targets a listing, a user, or both; at least one is required.
+    listing_id       = Column(Integer, ForeignKey("listing.listing_id", ondelete="CASCADE"), nullable=True)
+    reported_user_id = Column(Integer, ForeignKey("app_user.user_id", ondelete="CASCADE"), nullable=True)
+    reason           = Column(String(255), nullable=False)
+    status           = Column(String(20), nullable=False, default="Open")
+    created_at       = Column(TIMESTAMP, server_default=func.now())

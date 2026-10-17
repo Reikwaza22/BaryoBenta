@@ -1,3 +1,22 @@
+# Python / API
 .env
 __pycache__/
 *.pyc
+
+# Android
+android/build/
+android/app/build/
+android/app/release/
+android/.gradle/
+android/app/.gradle/
+android/.idea/
+android/app/.idea/
+android/*.iml
+android/app/*.iml
+android/local.properties
+android/app/local.properties
+android/.kotlin/
+android/captures/
+
+# Local test artifacts
+smoke_test.db

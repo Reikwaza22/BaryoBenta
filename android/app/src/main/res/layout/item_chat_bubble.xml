@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/spacing_md"
+    android:paddingVertical="4dp">
+
+    <LinearLayout
+        android:id="@+id/bubble_column"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:orientation="vertical"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="8dp"
+        android:background="@drawable/bg_bubble_theirs">
+
+        <ImageView
+            android:id="@+id/image_bubble_photo"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/bg_photo_rounded"
+            android:clipToOutline="true"
+            android:contentDescription="@string/cd_chat_photo_preview"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            tools:src="@drawable/ic_storefront"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/layout_bubble_voice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/button_bubble_play"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:padding="6dp"
+                android:src="@drawable/ic_play"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/cd_play_voice" />
+
+            <TextView
+                android:id="@+id/text_bubble_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="0:12" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_bubble_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="250dp"
+            android:textSize="@dimen/text_body"
+            tools:text="Hello, is this still available?" />
+
+        <TextView
+            android:id="@+id/text_bubble_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textSize="10sp"
+            tools:text="2m ago" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_bubble_reaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/bg_reaction_chip"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="2dp"
+        android:textSize="13sp"
+        android:visibility="gone"
+        tools:text="👍"
+        tools:visibility="visible" />
+
+</LinearLayout>

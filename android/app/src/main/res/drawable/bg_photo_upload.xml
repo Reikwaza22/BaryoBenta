@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Inset soft photo drop-zone with the original dashed outline -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/neu_shadow_dark" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+    <item
+        android:left="@dimen/neu_rim_sm"
+        android:top="@dimen/neu_rim_sm">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/neu_shadow_light" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+    <item
+        android:bottom="@dimen/neu_rim_sm"
+        android:left="@dimen/neu_rim_sm"
+        android:right="@dimen/neu_rim_sm"
+        android:top="@dimen/neu_rim_sm">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/orange_tint" />
+            <stroke
+                android:width="1.5dp"
+                android:color="@color/primary_light"
+                android:dashGap="4dp"
+                android:dashWidth="6dp" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+</layer-list>

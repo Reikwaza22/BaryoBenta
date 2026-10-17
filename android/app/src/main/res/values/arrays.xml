@@ -1,0 +1,7 @@
+<resources>
+    <string-array name="topup_payment_methods">
+        <item>GCash</item>
+        <item>PayMaya</item>
+        <item>Bank transfer</item>
+    </string-array>
+</resources>

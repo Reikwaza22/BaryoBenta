@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/header"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="4dp"
+        android:elevation="2dp">
+
+        <ImageView
+            android:id="@+id/button_chat_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="12dp"
+            android:src="@drawable/ic_back"
+            app:tint="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cd_back" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingVertical="6dp">
+
+            <TextView
+                android:id="@+id/text_chat_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_card_title"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="end"
+                tools:text="Ana Seller" />
+
+            <TextView
+                android:id="@+id/text_chat_listing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary"
+                android:textSize="12sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                tools:text="Gaming Laptop" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_chat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingVertical="@dimen/spacing_sm" />
+
+    <TextView
+        android:id="@+id/text_chat_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/spacing_md"
+        android:text="@string/chat_empty"
+        android:textColor="@color/text_secondary"
+        android:textSize="@dimen/text_body"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_recording_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/orange_tint"
+        android:gravity="center"
+        android:paddingVertical="@dimen/spacing_sm"
+        android:text="@string/chat_recording"
+        android:textColor="@color/accent"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface"
+        android:elevation="6dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="@dimen/spacing_sm">
+
+        <ImageView
+            android:id="@+id/button_chat_photo"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_camera"
+            app:tint="@color/text_secondary"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cd_chat_photo" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_input_field"
+            android:paddingHorizontal="@dimen/spacing_md">
+
+            <EditText
+                android:id="@+id/input_chat_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="46dp"
+                android:background="@null"
+                android:hint="@string/hint_message"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLength="1000"
+                android:maxLines="4"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_secondary"
+                android:textSize="@dimen/text_body" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/button_chat_voice"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="@dimen/spacing_xs"
+            android:padding="10dp"
+            android:src="@drawable/ic_mic"
+            app:tint="@color/text_secondary"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cd_voice_record" />
+
+        <ImageView
+            android:id="@+id/button_chat_send"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="@dimen/spacing_xs"
+            android:background="@drawable/bg_circle_primary"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="12dp"
+            android:src="@drawable/ic_send"
+            android:contentDescription="@string/cd_send" />
+    </LinearLayout>
+
+</LinearLayout>

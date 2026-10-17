@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Community Buy &amp; Sell</string>
+
+    <!-- Splash -->
+    <string name="splash_tagline">Buy and sell within your community.</string>
+    <string name="btn_get_started">Get Started</string>
+
+    <!-- Auth (user set-up) -->
+    <string name="auth_login_title">Welcome back</string>
+    <string name="auth_login_subtitle">Log in to continue to your community marketplace.</string>
+    <string name="auth_signup_title">Create your account</string>
+    <string name="auth_signup_subtitle">Set up your account to start buying and selling.</string>
+    <string name="hint_full_name">Full name</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_email">Email or username</string>
+    <string name="hint_email_signup">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">Log In</string>
+    <string name="btn_signup">Sign Up</string>
+    <string name="btn_signup_loading">Registering…</string>
+    <string name="auth_toggle_to_signup">Don\'t have an account? Sign up</string>
+    <string name="auth_toggle_to_login">Already have an account? Log in</string>
+    <string name="error_required_field">This field is required</string>
+    <string name="error_password_too_short">Password must be at least 6 characters</string>
+    <string name="error_invalid_email">Please enter a valid email address</string>
+    <string name="error_network">Could not reach the server. Is XAMPP running and the IP in RetrofitClient correct?</string>
+
+    <!-- Dashboard -->
+    <string name="welcome_message">Welcome back!</string>
+    <string name="dashboard_subtitle">What would you like to do today?</string>
+    <string name="card_browse_title">Browse Listings</string>
+    <string name="card_browse_desc">Explore available second-hand items from the community.</string>
+    <string name="card_my_listings_title">My Listings</string>
+    <string name="card_my_listings_desc">View and manage items you have posted.</string>
+    <string name="card_favorites_title">Favorites</string>
+    <string name="card_favorites_desc">View items you saved for later.</string>
+    <string name="section_nearby_listings">Nearby Listings</string>
+    <string name="section_categories">Categories</string>
+    <string name="location_campus">Your Campus / Barangay</string>
+
+    <!-- Bottom nav -->
+    <string name="nav_home">Home</string>
+    <string name="nav_browse">Browse</string>
+    <string name="nav_sell">Sell</string>
+    <string name="nav_messages">Messages</string>
+    <string name="nav_favorites">Favorites</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Listing / browse page -->
+    <string name="title_browse_listings">Browse Listings</string>
+    <string name="listing_search_hint">Search items…</string>
+    <string name="view_details">View Details</string>
+
+    <!-- Listing details page -->
+    <string name="title_listing_details">Listing Details</string>
+    <string name="label_category">Category</string>
+    <string name="label_status">Status</string>
+    <string name="label_seller">Seller</string>
+    <string name="label_description">Description</string>
+    <string name="status_available">Available</string>
+    <string name="status_sold">Sold</string>
+    <string name="status_pending">Pending</string>
+    <string name="btn_contact_seller">Contact Seller</string>
+    <string name="btn_add_favorite">Add to Favorites</string>
+    <string name="btn_back">Back</string>
+    <string name="btn_report">Report</string>
+    <string name="btn_report_listing">Report this Listing</string>
+    <string name="favorited_message">Added to favorites</string>
+    <string name="label_rating">Rating</string>
+    <string name="rating_format">%1$.1f (%2$d)</string>
+    <string name="review_count_format">(%1$d reviews)</string>
+    <string name="btn_rate_seller">Rate Seller</string>
+    <string name="cd_verified_badge">Verified seller</string>
+
+    <!-- Add Listing (Sell) page -->
+    <string name="title_add_listing">Sell an Item</string>
+    <string name="add_photos_label">Add Photos</string>
+    <string name="hint_item_title">Item title</string>
+    <string name="hint_item_category">Select category</string>
+    <string name="hint_item_price">Price (₱)</string>
+    <string name="hint_item_description">Describe your item…</string>
+    <string name="section_specifications">Specifications</string>
+    <string name="btn_add_spec">+ Add Spec</string>
+    <string name="hint_spec_name">Spec name (e.g. Brand)</string>
+    <string name="hint_spec_value">Value (e.g. Samsung)</string>
+    <string name="btn_post_listing">Post Listing</string>
+    <string name="posted_message">Listing posted!</string>
+    <string name="cd_remove_spec">Remove this specification</string>
+
+    <!-- My Listings (Product Logs) page -->
+    <string name="title_my_listings">My Listings</string>
+    <string name="my_listings_subtitle">Product logs — tap a listing to manage it or mark it sold.</string>
+
+    <!-- Messages page -->
+    <string name="title_messages">Messages</string>
+    <string name="messages_search_hint">Search conversations…</string>
+    <string name="open_chat_message">Opening conversation</string>
+
+    <!-- Categories page -->
+    <string name="title_categories">Categories</string>
+    <string name="cat_electronics">Electronics</string>
+    <string name="cat_fashion">Fashion &amp; Accessories</string>
+    <string name="cat_home">Home &amp; Living</string>
+    <string name="cat_sports">Sports &amp; Outdoors</string>
+    <string name="cat_vehicles">Vehicles</string>
+    <string name="cat_others">Others</string>
+
+    <!-- Profile page -->
+    <string name="title_profile">Profile</string>
+    <string name="menu_my_listings">My Listings (Product Logs)</string>
+    <string name="menu_verify_account">Verify Account (KYC)</string>
+    <string name="menu_favorites">Favorites</string>
+    <string name="menu_messages">Messages</string>
+    <string name="menu_settings">Edit Profile</string>
+    <string name="menu_logout">Log Out</string>
+
+    <!-- Report page -->
+    <string name="title_report">Report Listing</string>
+    <string name="report_subtitle">Tell us what\'s wrong with this listing.</string>
+    <string name="report_reason_prohibited">Prohibited or restricted item</string>
+    <string name="report_reason_scam">Suspected scam or fraud</string>
+    <string name="report_reason_inappropriate">Inappropriate content</string>
+    <string name="report_reason_other">Other</string>
+    <string name="hint_report_details">Additional details (optional)</string>
+    <string name="btn_submit_report">Submit Report</string>
+    <string name="report_submitted_message">Report submitted</string>
+
+    <!-- KYC / Identity Verification page -->
+    <string name="title_kyc">Identity Verification</string>
+    <string name="kyc_intro">Verify your identity to build trust in the community. Verified members get a badge on their profile and listings.</string>
+    <string name="kyc_upload_id_label">Upload a valid ID</string>
+    <string name="kyc_upload_id_hint">Tap to upload (front side)</string>
+    <string name="hint_id_type">ID type (e.g. School ID, Driver\'s License)</string>
+    <string name="hint_id_number">ID number</string>
+    <string name="btn_submit_verification">Submit for Verification</string>
+    <string name="kyc_submitted_message">Verification submitted for review</string>
+    <string name="kyc_already_verified_title">You\'re verified</string>
+    <string name="kyc_already_verified_body">Your identity has been verified. A badge now appears on your profile and listings.</string>
+    <string name="cd_id_upload">Upload ID photo</string>
+
+    <!-- Rate Seller page -->
+    <string name="title_rate_seller">Rate Seller</string>
+    <string name="rate_seller_intro">How was your experience with this seller?</string>
+    <string name="hint_review_comment">Share details of your experience (optional)</string>
+    <string name="btn_submit_review">Submit Review</string>
+    <string name="review_submitted_message">Thanks for your review!</string>
+    <string name="error_select_rating">Please select a star rating</string>
+
+    <!-- Sample data disclaimer -->
+
+    <!-- Content descriptions -->
+    <string name="cd_app_logo">Community Buy and Sell application logo</string>
+    <string name="cd_browse_icon">Browse listings icon</string>
+    <string name="cd_my_listings_icon">My listings icon</string>
+    <string name="cd_favorites_icon">Favorites icon</string>
+    <string name="cd_item_image">Item image</string>
+    <string name="cd_back">Navigate back</string>
+    <string name="cd_favorite">Favorite this item</string>
+    <string name="cd_menu">Open menu</string>
+    <string name="cd_notifications">Notifications</string>
+    <string name="cd_share">Share this listing</string>
+    <string name="cd_report">Report this listing</string>
+    <string name="cd_filter">Filter listings</string>
+    <string name="cd_camera">Add item photo</string>
+    <string name="cd_edit">Edit</string>
+    <string name="cd_chat">Message seller</string>
+    <string name="cd_toggle_password">Show or hide password</string>
+    <string name="error_server">Server error (%1$d). Check the PHP/PostgreSQL setup.</string>
+    <string name="error_session_expired">Session expired. Please log in again.</string>
+    <string name="location_default">BSIT2 Campus Community</string>
+    <string name="category_all">All</string>
+    <string name="empty_listings">No listings yet. Be the first to post one!</string>
+    <string name="empty_browse">No items found.</string>
+    <string name="empty_messages">No conversations yet. Contact a seller from a listing.</string>
+    <string name="empty_my_listings">You haven\'t posted anything yet. Tap + to sell an item.</string>
+    <string name="empty_favorites">No favorites yet. Tap the heart on an item to save it.</string>
+    <string name="empty_transactions">No transactions yet.</string>
+    <string name="empty_seller_listings">This seller has no active listings.</string>
+    <string name="section_comments">Comments</string>
+    <string name="no_comments_yet">No comments yet. Ask the seller a question!</string>
+    <string name="hint_comment">Write a comment…</string>
+    <string name="hint_message">Type a message…</string>
+    <string name="chat_empty">Say hi to start the conversation.</string>
+    <string name="cd_send">Send</string>
+    <string name="btn_manage_listing">Manage Listing</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="title_transactions">Transaction History</string>
+    <string name="menu_transactions">Transaction History</string>
+    <string name="title_seller_profile">Seller Profile</string>
+    <string name="tx_sold_to">Sold to %1$s · %2$s</string>
+    <string name="tx_bought_from">Bought from %1$s · %2$s</string>
+    <string name="tx_role_sold">Sold</string>
+    <string name="tx_role_bought">Bought</string>
+    <string name="photo_added">Photo added — tap to change</string>
+    <string name="choose_category">Choose a category</string>
+    <string name="error_choose_category">Please select a category</string>
+    <string name="error_enter_price">Enter a valid price</string>
+    <string name="posting">Posting…</string>
+    <string name="sending">Sending…</string>
+    <string name="sort_title">Sort by</string>
+    <string name="sort_newest">Newest first</string>
+    <string name="sort_price_low">Price: low to high</string>
+    <string name="sort_price_high">Price: high to low</string>
+    <string name="manage_title">Manage listing</string>
+    <string name="manage_available">Mark as Available</string>
+    <string name="manage_pending">Mark as Pending</string>
+    <string name="manage_sold">Mark as Sold…</string>
+    <string name="manage_delete">Delete listing</string>
+    <string name="manage_choose_buyer">Who bought it?</string>
+    <string name="manage_no_buyers">No one has messaged you about this item yet, so there is no buyer to record.</string>
+    <string name="manage_delete_confirm">Delete this listing permanently?</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_save">Save</string>
+    <string name="edit_profile_title">Edit profile</string>
+    <string name="hint_location">Campus / Barangay</string>
+    <string name="stats_format">%1$d listings · %2$d sold</string>
+    <string name="stats_rating_format">%1$d listings · %2$d sold · ★ %3$.1f (%4$d)</string>
+    <string name="kyc_pending_title">Verification under review</string>
+    <string name="kyc_pending_body">An admin is checking your ID. You\'ll get your badge once it\'s approved.</string>
+    <string name="kyc_photo_required">Please add a photo of your ID</string>
+    <string name="cannot_message_self">This is your own listing.</string>
+    <string name="reason_required">Please choose a reason</string>
+    <string name="login_loading">Logging in…</string>
+    <string name="menu_verify_pending">Verify Account (under review)</string>
+    <string name="menu_verify_done">Verified account</string>
+    <string name="listing_deleted">Listing deleted</string>
+    <string name="listing_updated">Listing updated</string>
+    <string name="welcome_named">Welcome back, %1$s!</string>
+    <string name="btn_remove_favorite">Remove from Favorites</string>
+
+    <!-- Wallet (digital credits) -->
+    <string name="title_wallet">Wallet</string>
+    <string name="menu_wallet">Wallet &amp; Credits</string>
+    <string name="wallet_available_credits">Available Credits</string>
+    <string name="wallet_fee_note">Every item you post costs %1$d digital credits, deducted when the listing is published. Recording a sale is free, and buyers still pay you in cash at the meetup.</string>
+    <string name="hint_topup_amount">Amount (₱)</string>
+    <string name="hint_payment_reference">Payment reference / receipt number</string>
+    <string name="hint_payment_method">Payment method</string>
+    <string name="btn_topup">Request credits</string>
+    <string name="wallet_history">Credit History</string>
+    <string name="wallet_request_row">Top-up %1$s via %2$s • %3$s • Ref: %4$s</string>
+    <string name="wallet_topup_notice">Use the payment instructions below and enter your transaction reference. Your request stays pending until an administrator verifies it. Buyer payments remain cash at meetups.</string>
+    <string name="listing_wallet_fee_hint">Posting an item costs 10 digital credits, deducted from your approved wallet balance when the listing is published. Recording a sale is free.</string>
+    <string name="listing_wallet_required_title">Top up before selling</string>
+    <string name="listing_wallet_required_message">You need at least 10 approved digital credits before you can post an item. Request a top-up and wait for admin approval, then return to Sell.</string>
+    <string name="listing_wallet_insufficient_message">Posting an item costs %1$d digital credits and your approved wallet balance is not enough. Top up, wait for admin approval, then post again.</string>
+    <string name="btn_open_wallet">Open wallet</string>
+    <string name="empty_wallet">No credit history yet. Contact an administrator to add credits after payment is verified.</string>
+    <string name="error_topup_amount">Enter a valid amount (e.g. 100 or 100.50)</string>
+    <string name="error_payment_reference">Enter the payment reference (3–120 characters)</string>
+
+    <!-- Terms &amp; policy on signup -->
+    <string name="terms_agree">I have read and agree to the Terms &amp; Community Policy</string>
+    <string name="terms_view">Read Terms &amp; Policy</string>
+    <string name="terms_title">Terms &amp; Community Policy</string>
+    <string name="terms_body">BaryoBenta is a community marketplace for meet-up, face-to-face buying and selling. To keep everyone safe from scams, every member must follow these rules:\n\n• Sell only what you own. Post real items with honest photos, descriptions and prices. Fake or bait listings are banned.\n\n• Pay for items in person. Buyers pay sellers face-to-face at the meetup. Never send deposits, advance payments, shipping fees, or reservation fees to a buyer or seller.\n\n• Wallet credits are for seller fees only. Sellers may request wallet top-ups through the app. Credits are added only after an administrator verifies the payment. Every item posted costs a flat fee of 10 digital credits, deducted from the seller’s credits when the listing is published. Buyers do not pay through the app.\n\n• No scams or fraud. Scamming, impersonation, harassment, or listing prohibited items may result in listing removal and a permanent ban.\n\n• Verification matters. Verified badges help buyers trust you. Lying during verification may remove your badge or suspend your account.\n\nReport suspicious listings or users and meet in a safe public place.</string>
+    <string name="error_terms_agree">Please agree to the Terms &amp; Community Policy first</string>
+    <string name="terms_btn_agree">I Agree</string>
+
+    <!-- Chat: reactions, voice, photos -->
+    <string name="cd_voice_record">Record a voice message</string>
+    <string name="cd_chat_photo">Send a photo</string>
+    <string name="cd_chat_photo_preview">Photo message</string>
+    <string name="chat_recording">Recording… tap the mic again to send</string>
+    <string name="voice_too_short">Hold the recording a bit longer</string>
+    <string name="error_voice_permission">Microphone permission is needed to record voice messages</string>
+    <string name="error_recording">Could not record. Try again.</string>
+    <string name="cd_play_voice">Play voice message</string>
+    <string name="chat_send_photo_title">Send a photo</string>
+    <string name="chat_take_photo">Take photo</string>
+    <string name="chat_choose_gallery">Choose from gallery</string>
+    <string name="chat_photo_error">Could not load that photo. Try another one.</string>
+    <string name="reaction_title">React</string>
+    <string name="reaction_remove">Remove reaction</string>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- BaryoBenta theme: orange / black / white (unchanged palette).
+         The soft-surface / neumorphism treatment is done with shapes and
+         dual-tone soft shadows (neu_shadow_*), not with new colors. -->
+    <color name="primary">#FF7A00</color>
+    <color name="primary_dark">#E06600</color>
+    <color name="primary_light">#FFE0BF</color>
+    <color name="orange_tint">#FFF4E8</color>
+    <color name="accent">#FF4D00</color>
+
+    <!-- Black chrome: headers, bottom bar, status bar -->
+    <color name="header">#0E0E0E</color>
+    <color name="header_text">#FFFFFF</color>
+    <color name="header_subtitle">#B3B3B3</color>
+
+    <!-- Neutrals -->
+    <color name="background">#FFFFFF</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="text_primary">#111111</color>
+    <color name="text_secondary">#6E6E6E</color>
+    <color name="divider">#E8E8E8</color>
+
+    <!-- Dual-tone soft shadows used by the neu_* drawables -->
+    <color name="neu_shadow_dark">#33000000</color>
+    <color name="neu_shadow_light">#FFFFFFFF</color>
+
+    <!-- Status colors -->
+    <color name="status_available">#1E8E3E</color>
+    <color name="status_available_bg">#E3F4E8</color>
+    <color name="status_sold">#D93025</color>
+    <color name="status_sold_bg">#FCE8E6</color>
+    <color name="status_pending">#B06000</color>
+    <color name="status_pending_bg">#FEF3E0</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="logo_cream">#FDF9EF</color>
+</resources>

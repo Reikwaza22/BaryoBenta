@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Raised soft circle for category discs -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:left="@dimen/neu_rim"
+        android:top="@dimen/neu_rim">
+        <shape android:shape="oval">
+            <solid android:color="@color/neu_shadow_dark" />
+        </shape>
+    </item>
+    <item
+        android:bottom="@dimen/neu_rim"
+        android:right="@dimen/neu_rim">
+        <shape android:shape="oval">
+            <solid android:color="@color/neu_shadow_light" />
+        </shape>
+    </item>
+    <item
+        android:bottom="@dimen/neu_rim"
+        android:left="@dimen/neu_rim"
+        android:right="@dimen/neu_rim"
+        android:top="@dimen/neu_rim">
+        <shape android:shape="oval">
+            <solid android:color="@color/primary_light" />
+        </shape>
+    </item>
+</layer-list>

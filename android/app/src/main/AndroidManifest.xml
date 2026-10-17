@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Needed to reach the PHP API over HTTP (photos are picked with the system picker, no storage permission needed) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Voice messages in chat -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.BaryoBenta">
+
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".AuthActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:parentActivityName=".SplashActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="false"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name=".ListingActivity"
+            android:exported="false"
+            android:label="@string/title_browse_listings"
+            android:parentActivityName=".DashboardActivity" />
+
+        <activity
+            android:name=".ListingDetailsActivity"
+            android:exported="false"
+            android:label="@string/title_listing_details"
+            android:parentActivityName=".ListingActivity" />
+
+        <activity
+            android:name=".AddListingActivity"
+            android:exported="false"
+            android:label="@string/title_add_listing"
+            android:parentActivityName=".DashboardActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".MyListingsActivity"
+            android:exported="false"
+            android:label="@string/title_my_listings"
+            android:parentActivityName=".ProfileActivity" />
+
+        <activity
+            android:name=".WalletActivity"
+            android:exported="false"
+            android:label="@string/title_wallet"
+            android:parentActivityName=".ProfileActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".MessagesActivity"
+            android:exported="false"
+            android:label="@string/title_messages"
+            android:parentActivityName=".DashboardActivity" />
+
+        <activity
+            android:name=".CategoriesActivity"
+            android:exported="false"
+            android:label="@string/title_categories"
+            android:parentActivityName=".DashboardActivity" />
+
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:label="@string/title_profile"
+            android:parentActivityName=".DashboardActivity" />
+
+        <activity
+            android:name=".ReportActivity"
+            android:exported="false"
+            android:label="@string/title_report"
+            android:parentActivityName=".ListingDetailsActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".KycActivity"
+            android:exported="false"
+            android:label="@string/title_kyc"
+            android:parentActivityName=".ProfileActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".RateSellerActivity"
+            android:exported="false"
+            android:label="@string/title_rate_seller"
+            android:parentActivityName=".ListingDetailsActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false"
+            android:parentActivityName=".MessagesActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".FavoritesActivity"
+            android:exported="false"
+            android:parentActivityName=".ProfileActivity" />
+
+        <activity
+            android:name=".TransactionsActivity"
+            android:exported="false"
+            android:parentActivityName=".ProfileActivity" />
+
+        <activity
+            android:name=".SellerProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".ListingDetailsActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

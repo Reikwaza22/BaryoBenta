@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Soft raised white button (for dark backgrounds such as the splash) -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/primary_light">
+    <item android:id="@android:id/mask">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+    <item>
+        <layer-list>
+            <item
+                android:left="@dimen/neu_rim"
+                android:top="@dimen/neu_rim">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/neu_shadow_dark" />
+                    <corners android:radius="16dp" />
+                </shape>
+            </item>
+            <item
+                android:bottom="@dimen/neu_rim"
+                android:right="@dimen/neu_rim">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/neu_shadow_light" />
+                    <corners android:radius="16dp" />
+                </shape>
+            </item>
+            <item
+                android:bottom="@dimen/neu_rim"
+                android:left="@dimen/neu_rim"
+                android:right="@dimen/neu_rim"
+                android:top="@dimen/neu_rim">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/white" />
+                    <corners android:radius="14dp" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</ripple>

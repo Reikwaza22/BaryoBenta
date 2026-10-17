@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Raised neumorphic surface: light rim top-left, soft dark rim bottom-right -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:left="@dimen/neu_rim"
+        android:top="@dimen/neu_rim">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/neu_shadow_dark" />
+            <corners android:radius="18dp" />
+        </shape>
+    </item>
+    <item
+        android:bottom="@dimen/neu_rim"
+        android:right="@dimen/neu_rim">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/neu_shadow_light" />
+            <corners android:radius="18dp" />
+        </shape>
+    </item>
+    <item
+        android:bottom="@dimen/neu_rim"
+        android:left="@dimen/neu_rim"
+        android:right="@dimen/neu_rim"
+        android:top="@dimen/neu_rim">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/surface" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+</layer-list>

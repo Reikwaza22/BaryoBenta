@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/header"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="4dp"
+        android:elevation="2dp">
+
+        <ImageView
+            android:id="@+id/button_report_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="12dp"
+            android:src="@drawable/ic_back"
+            app:tint="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cd_back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/title_report"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_card_title"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_md">
+
+            <TextView
+                android:id="@+id/text_report_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_card_title"
+                android:textStyle="bold"
+                tools:text="Reporting: Gaming Laptop" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="@dimen/spacing_md"
+                android:text="@string/report_subtitle"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_body" />
+
+            <RadioGroup
+                android:id="@+id/group_report_reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/reason_prohibited"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/report_reason_prohibited"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_body"
+                    android:buttonTint="@color/primary"
+                    android:paddingVertical="@dimen/spacing_xs" />
+
+                <RadioButton
+                    android:id="@+id/reason_scam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/report_reason_scam"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_body"
+                    android:buttonTint="@color/primary"
+                    android:paddingVertical="@dimen/spacing_xs" />
+
+                <RadioButton
+                    android:id="@+id/reason_inappropriate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/report_reason_inappropriate"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_body"
+                    android:buttonTint="@color/primary"
+                    android:paddingVertical="@dimen/spacing_xs" />
+
+                <RadioButton
+                    android:id="@+id/reason_other"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/report_reason_other"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_body"
+                    android:buttonTint="@color/primary"
+                    android:paddingVertical="@dimen/spacing_xs" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:background="@drawable/bg_input_field"
+                android:paddingHorizontal="@dimen/spacing_md">
+
+                <EditText
+                    android:id="@+id/input_report_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minLines="3"
+                    android:gravity="top"
+                    android:paddingVertical="@dimen/spacing_sm"
+                    android:background="@null"
+                    android:hint="@string/hint_report_details"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_secondary"
+                    android:textSize="@dimen/text_body" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_submit_report"
+                style="@style/Button.Primary.BaryoBenta"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:text="@string/btn_submit_report"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

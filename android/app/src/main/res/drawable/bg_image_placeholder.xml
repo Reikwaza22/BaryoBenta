@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Inset soft placeholder for images that failed to load -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/neu_shadow_dark" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+    <item
+        android:left="@dimen/neu_rim_sm"
+        android:top="@dimen/neu_rim_sm">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/neu_shadow_light" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+    <item
+        android:bottom="@dimen/neu_rim_sm"
+        android:left="@dimen/neu_rim_sm"
+        android:right="@dimen/neu_rim_sm"
+        android:top="@dimen/neu_rim_sm">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/orange_tint" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+</layer-list>

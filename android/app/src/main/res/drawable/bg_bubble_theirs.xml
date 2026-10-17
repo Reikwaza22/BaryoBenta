@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Raised soft chat bubble (theirs), tail corner kept small at bottom-left -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:left="@dimen/neu_rim_sm"
+        android:top="@dimen/neu_rim_sm">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/neu_shadow_dark" />
+            <corners
+                android:bottomLeftRadius="4dp"
+                android:bottomRightRadius="16dp"
+                android:topLeftRadius="16dp"
+                android:topRightRadius="16dp" />
+        </shape>
+    </item>
+    <item
+        android:bottom="@dimen/neu_rim_sm"
+        android:right="@dimen/neu_rim_sm">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/neu_shadow_light" />
+            <corners
+                android:bottomLeftRadius="4dp"
+                android:bottomRightRadius="16dp"
+                android:topLeftRadius="16dp"
+                android:topRightRadius="16dp" />
+        </shape>
+    </item>
+    <item
+        android:bottom="@dimen/neu_rim_sm"
+        android:left="@dimen/neu_rim_sm"
+        android:right="@dimen/neu_rim_sm"
+        android:top="@dimen/neu_rim_sm">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/primary_light" />
+            <corners
+                android:bottomLeftRadius="4dp"
+                android:bottomRightRadius="16dp"
+                android:topLeftRadius="16dp"
+                android:topRightRadius="16dp" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Small raised neumorphic circle for header icon buttons -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:left="@dimen/neu_rim_sm"
+        android:top="@dimen/neu_rim_sm">
+        <shape android:shape="oval">
+            <solid android:color="@color/neu_shadow_dark" />
+        </shape>
+    </item>
+    <item
+        android:bottom="@dimen/neu_rim_sm"
+        android:right="@dimen/neu_rim_sm">
+        <shape android:shape="oval">
+            <solid android:color="@color/neu_shadow_light" />
+        </shape>
+    </item>
+    <item
+        android:bottom="@dimen/neu_rim_sm"
+        android:left="@dimen/neu_rim_sm"
+        android:right="@dimen/neu_rim_sm"
+        android:top="@dimen/neu_rim_sm">
+        <shape android:shape="oval">
+            <solid android:color="@color/surface" />
+        </shape>
+    </item>
+</layer-list>

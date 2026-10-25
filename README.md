@@ -28,6 +28,7 @@ listing-boost requests.
 ```
 api/                  FastAPI backend (deployed to Vercel)
   main.py             Endpoints and business rules (Vercel entrypoint)
+  php_compat.py       PHP-style contract used by the Android app (*.php paths)
   auth.py             bcrypt password hashing + JWT bearer tokens
   models.py           SQLAlchemy models (one per database table)
   schemas.py          Pydantic request/response schemas and validation
@@ -36,15 +37,39 @@ android/              Android mobile client (Java, Gradle, Retrofit)
 database/
   schema.sql          Full CREATE TABLE script + sample records (fresh DB)
   migrations/         SQL migrations for the live Supabase database
+  demo_photos/        Photos used by the demo-content seed script
+  seed_demo_content.sh Posts demo listings + a sample chat through the API
 requirements.txt      Pinned Python dependencies of the API
 .env.example          Environment variable template (no real secrets)
 ```
+
+## Mobile App API (PHP-compatible contract)
+
+The Android client in `android/` was built against the team's original PHP API,
+so `api/php_compat.py` serves that exact contract from the same deployment:
+
+- Paths keep their PHP names: `login.php`, `register.php`, `listings.php`,
+  `listing.php`, `listing_create.php`, `listing_action.php`, `categories.php`,
+  `profile.php`, `kyc_submit.php`, `favorite_toggle.php`, `comments.php`,
+  `conversations.php`, `messages.php`, `wallet.php`, `review_add.php`,
+  `report_add.php`, `listing_buyers.php`, `transactions.php`, `logout.php`.
+- The session token travels in the `X-Auth-Token` header (the app sends it
+  automatically), and every response is the envelope
+  `{"success": bool, "message": str, "data": ...}`.
+- Uploaded photos, chat images, voice notes and KYC scans are stored in the
+  `media_blob` table (serverless deployments have no writable file system) and
+  streamed back from `GET /uploads/{name}`.
+- These tables come from `database/migrations/002_php_compat_tables.sql`;
+  `003_php_compat_demo_accounts.sql` mirrors the demo accounts below into them.
+- `database/seed_demo_content.sh` posts the demo listings (with photos) and a
+  sample buyer/seller conversation: `./seed_demo_content.sh`.
 
 ## Demo Accounts
 
 Seeded by `database/schema.sql` / migration 001 so the protected endpoints can
 be evaluated. Log in via `POST /auth/login` and use the returned
-`access_token` as `Authorization: Bearer <token>`.
+`access_token` as `Authorization: Bearer <token>`. The same three accounts log
+into the Android app through `login.php` (migrations 002 + 003).
 
 | Email | Password | Role |
 | --- | --- | --- |
@@ -78,7 +103,12 @@ psql -d baryobenta -f database/schema.sql
 
 The live Supabase database was migrated with
 `database/migrations/001_auth_and_reports.sql` (adds `report.reported_user_id`,
-the one-rating-per-transaction constraint, and the demo accounts).
+the one-rating-per-transaction constraint, and the demo accounts),
+`002_php_compat_tables.sql` (tables of the mobile contract, incl. `media_blob`)
+and `003_php_compat_demo_accounts.sql` (demo accounts for the mobile contract).
+For a fresh local database that also runs the mobile contract, apply the PHP
+schema first: `psql -d baryobenta -f baryobenta_api/schema.sql` from the local
+XAMPP copy, then run migrations 002 and 003 (they are `IF NOT EXISTS` safe).
 
 ## Android Setup
 

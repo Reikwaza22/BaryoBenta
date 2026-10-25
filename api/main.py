@@ -23,11 +23,21 @@ from database import get_db
 
 app = FastAPI(
     title="BaryoBenta API",
-    version="0.2.0",
+    version="0.3.0",
     description="REST API of the BaryoBenta community buy & sell marketplace. "
                 "Members register and log in for a JWT bearer token; protected "
-                "endpoints expect 'Authorization: Bearer <token>'.",
+                "endpoints expect 'Authorization: Bearer <token>'. The mobile "
+                "client's PHP-style contract (*.php paths, X-Auth-Token header, "
+                "envelope responses) is served by php_compat.",
 )
+
+# The Android client in android/ was built against the team's original PHP API:
+# *.php paths, an X-Auth-Token session header and {"success","message","data"}
+# envelopes. php_compat re-implements that contract on this deployment, so the
+# shipped APK talks to the same cloud backend as the documented REST API.
+import php_compat  # noqa: E402  (imported after the sys.path bootstrap above)
+
+app.include_router(php_compat.router)
 
 
 @app.get("/", include_in_schema=False)

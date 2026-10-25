@@ -26,7 +26,6 @@ import functools
 import os
 import re
 import secrets
-import urllib.request
 from datetime import datetime, timezone
 from typing import Any
 
@@ -176,34 +175,6 @@ def _media_url(request: Request, path: str | None) -> str | None:
     if path.startswith("http://") or path.startswith("https://"):
         return path
     return _base_url(request) + "uploads/" + path.lstrip("/")
-
-
-# Fixed rather than derived from the request headers so the warm-up below can
-# never be pointed at another host through a spoofed Host / X-Forwarded-Host.
-PUBLIC_BASE_URL = (os.getenv("PUBLIC_BASE_URL") or "https://baryo-benta.vercel.app").rstrip("/") + "/"
-WARM_TIMEOUT_SECONDS = 6
-
-
-def _warm_upload(name: str | None) -> None:
-    """Requests a freshly stored upload once so Vercel caches it at the edge.
-
-    A newly created listing has an image URL nobody has ever requested, so the
-    phone's first load has to cold-start the function and reach PostgreSQL
-    before a single byte comes back.  That often outlasts the client's image
-    timeout, which leaves the card showing the placeholder until the screen is
-    reopened.  Fetching it here - after the row is committed - means the edge
-    already has the bytes cached by the time the feed reloads.  Best effort:
-    a slow cache warmer must never fail the listing that was just created.
-    """
-    if not name:
-        return
-    url = PUBLIC_BASE_URL + "uploads/" + name.lstrip("/")
-    try:
-        request = urllib.request.Request(url, headers={"User-Agent": "BaryoBenta-warmup/1.0"})
-        with urllib.request.urlopen(request, timeout=WARM_TIMEOUT_SECONDS) as response:
-            response.read()
-    except Exception:
-        pass
 
 
 # -------------------------------------------------------------------------- auth
@@ -667,9 +638,6 @@ async def listing_create_php(request: Request):
                     conn.execute(text("INSERT INTO listing_specs (listing_id, spec_name, spec_value) "
                                       "VALUES (:l, :n, :v)"),
                                  {"l": listing_id, "n": spec_name, "v": spec_value})
-
-    # Committed above, so the warming fetch can read the stored bytes.
-    _warm_upload(photo)
 
     return _ok({"listing_id": int(listing_id), "credits": new_balance},
                f"Listing posted! {CREDIT_POSTING_FEE} digital credits were deducted from your wallet.")

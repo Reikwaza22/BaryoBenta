@@ -64,7 +64,8 @@ LID=$(curl -s -H "X-Auth-Token: $BTOK" "$API/listings.php?q=Sony%20WH-1000XM4" |
 SID=$(curl -s -H "X-Auth-Token: $BTOK" "$API/listing.php?id=$LID" | field "['data']['seller_id']")
 BID=$(curl -s -H "X-Auth-Token: $BTOK" "$API/profile.php" | field "['data']['user_id']")
 
-COUNT=$(curl -s -H "X-Auth-Token: $BTOK" "$API/messages.php?listing_id=$LID&other_id=$SID" | field "len(d['data'])")
+COUNT=$(curl -s -H "X-Auth-Token: $BTOK" "$API/messages.php?listing_id=$LID&other_id=$SID" \
+  | python3 -c "import sys,json;print(len(json.load(sys.stdin)['data']))")
 if [ "$COUNT" != "0" ]; then
   echo "conversation already exists, skipping"
 else

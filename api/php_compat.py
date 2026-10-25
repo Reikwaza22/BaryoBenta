@@ -323,7 +323,12 @@ async def serve_upload(request: Request, name: str):
     if data is None:
         raise Fail("File not found.", 404)
 
-    headers = {"Accept-Ranges": "bytes", "Cache-Control": "public, max-age=86400"}
+    # Upload names are random and never overwritten, so browsers, the phone and
+    # Vercel's edge may cache the bytes for good. s-maxage keeps photo loading
+    # off the cold serverless function, which otherwise takes longer than the
+    # mobile client's image timeout.
+    headers = {"Accept-Ranges": "bytes",
+               "Cache-Control": "public, max-age=31536000, s-maxage=31536000, immutable"}
     range_header = request.headers.get("range")
     if range_header:
         match = re.match(r"bytes=(\d*)-(\d*)", range_header)
